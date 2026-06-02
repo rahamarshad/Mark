@@ -781,7 +781,7 @@ class JarvisLive:
 
                             full_out = " ".join(out_buf).strip()
                             if full_out:
-                                self.ui.write_log(f"Jarvis: {full_out}")
+                                self.ui.write_log(f"ASTRA: {full_out}")
                             out_buf = []
 
                     if response.tool_call:
@@ -859,7 +859,7 @@ class JarvisLive:
 
                     print("[JARVIS] ✅ Connected.")
                     self.ui.set_state("LISTENING")
-                    self.ui.write_log("SYS: JARVIS online.")
+                    self.ui.write_log("SYS: ASTRA online.")
 
                     tg.create_task(self._send_realtime())
                     tg.create_task(self._listen_audio())

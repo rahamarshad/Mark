@@ -345,7 +345,7 @@ class _VisionSession:
                     if transcript and self._player:
                         full = re.sub(r"\s+", " ", " ".join(transcript)).strip()
                         if full:
-                            self._player.write_log(f"Jarvis: {full}")
+                            self._player.write_log(f"ASTRA: {full}")
                             print(f"[Vision] 💬 {full}")
                     transcript = []
 
