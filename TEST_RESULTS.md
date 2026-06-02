@@ -2,7 +2,7 @@
 
 Date: 2026-06-01
 Machine: macOS 26.5, Apple Silicon
-Project path: `/Users/rahamarshad7/Desktop/Jarvis/original-mark-xxxix`
+Project path: `/Users/rahamarshad7/Desktop/Astra`
 
 ## Works
 
@@ -81,4 +81,3 @@ Please switch to the google.genai package.
 ## Current Status
 
 The app is installed and launches to setup. Local UI/import/memory/audio/browser/tool smoke tests pass. Live AI and voice conversation are pending a Gemini API key.
-

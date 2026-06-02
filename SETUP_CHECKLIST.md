@@ -49,7 +49,6 @@ Without these permissions, voice input, computer control, screen analysis, and s
 ## Run Command
 
 ```bash
-cd /Users/rahamarshad7/Desktop/Jarvis/original-mark-xxxix
+cd /Users/rahamarshad7/Desktop/Astra
 .venv/bin/python main.py
 ```
-
