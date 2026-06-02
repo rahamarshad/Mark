@@ -47,10 +47,19 @@ CHANNELS            = 1
 SEND_SAMPLE_RATE    = 16000
 RECEIVE_SAMPLE_RATE = 24000
 CHUNK_SIZE          = 1024
+DEFAULT_VOICE_NAME  = "Charon"
 
 def _get_api_key() -> str:
     with open(API_CONFIG_PATH, "r", encoding="utf-8") as f:
         return json.load(f)["gemini_api_key"]
+
+
+def _get_voice_name() -> str:
+    try:
+        with open(API_CONFIG_PATH, "r", encoding="utf-8") as f:
+            return json.load(f).get("gemini_voice_name") or DEFAULT_VOICE_NAME
+    except Exception:
+        return DEFAULT_VOICE_NAME
 
 
 def _load_system_prompt() -> str:
@@ -534,6 +543,7 @@ class JarvisLive:
         memory     = load_memory()
         mem_str    = format_memory_for_prompt(memory)
         sys_prompt = _load_system_prompt()
+        voice_name = _get_voice_name()
 
         now      = datetime.now()
         time_str = now.strftime("%A, %B %d, %Y — %I:%M %p")
@@ -558,7 +568,8 @@ class JarvisLive:
             speech_config=types.SpeechConfig(
                 voice_config=types.VoiceConfig(
                     prebuilt_voice_config=types.PrebuiltVoiceConfig(
-                        voice_name="Charon"
+                        # Change config/api_keys.json -> gemini_voice_name to try another Gemini voice.
+                        voice_name=voice_name
                     )
                 )
             ),

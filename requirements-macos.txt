@@ -1,0 +1,31 @@
+# macOS runtime dependencies for MARK XXXIX.
+# The upstream requirements.txt includes Windows-only packages:
+# comtypes, pycaw, win10toast, pywinauto.
+
+sounddevice
+google-genai
+google-generativeai
+Pillow
+requests
+beautifulsoup4
+duckduckgo-search
+ddgs
+playwright
+pyautogui
+pyperclip
+pygetwindow
+opencv-python
+numpy
+mss
+psutil
+send2trash
+youtube-transcript-api
+python-pptx
+pyqt6
+plyer
+pdfplumber
+PyPDF2
+python-docx
+pandas
+openpyxl
+pydub

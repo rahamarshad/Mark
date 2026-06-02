@@ -69,6 +69,10 @@ def _get_api_key() -> str:
     return key
 
 
+def _get_voice_name() -> str:
+    return _load_config().get("gemini_voice_name") or _DEFAULT_VOICE_NAME
+
+
 def _get_os() -> str:
     return _load_config().get("os_system", "windows").lower()
 
@@ -76,6 +80,7 @@ _LIVE_MODEL         = "models/gemini-2.5-flash-native-audio-preview-12-2025"
 _CHANNELS           = 1
 _RECEIVE_SAMPLE_RATE = 24_000
 _CHUNK_SIZE         = 1_024
+_DEFAULT_VOICE_NAME = "Charon"
 
 _IMG_MAX_W = 640
 _IMG_MAX_H = 360
@@ -263,7 +268,8 @@ class _VisionSession:
             speech_config=gtypes.SpeechConfig(
                 voice_config=gtypes.VoiceConfig(
                     prebuilt_voice_config=gtypes.PrebuiltVoiceConfig(
-                        voice_name="Charon"
+                        # Change config/api_keys.json -> gemini_voice_name to try another Gemini voice.
+                        voice_name=_get_voice_name()
                     )
                 )
             ),
